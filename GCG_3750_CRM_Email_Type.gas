@@ -1,0 +1,1141 @@
+Program.Sub.ScreenSU.Start
+gui.F_Email..create
+gui.F_Email..caption("Send Emails")
+gui.F_Email..size(6990,12450)
+gui.F_Email..minx(0)
+gui.F_Email..miny(0)
+gui.F_Email..position(11340,2310)
+gui.F_Email..event(unload,f_email_unload)
+gui.F_Email..alwaysontop(False)
+gui.F_Email..fontname("Arial")
+gui.F_Email..fontsize(8)
+gui.F_Email..forecolor(0)
+gui.F_Email..fontstyle(,,,,)
+gui.F_Email..BackColor(-2147483633)
+gui.F_Email..controlbox(True)
+gui.F_Email..maxbutton(True)
+gui.F_Email..minbutton(True)
+gui.F_Email..mousepointer(0)
+gui.F_Email..moveable(True)
+gui.F_Email..sizeable(False)
+gui.F_Email..ShowInTaskBar(True)
+gui.F_Email..titlebar(True)
+gui.F_Email.tabEmail.create(tab)
+gui.F_Email.tabEmail.tabs(2)
+gui.F_Email.tabEmail.tabsperrow(2)
+gui.F_Email.tabEmail.settab(0)
+gui.F_Email.tabEmail.caption("Send Email")
+gui.F_Email.tabEmail.settab(1)
+gui.F_Email.tabEmail.caption("Modify Email Types")
+gui.F_Email.tabEmail.size(6570,11685)
+gui.F_Email.tabEmail.position(100,100)
+gui.F_Email.tabEmail.visible(True)
+gui.F_Email.tabEmail.fontname("Arial")
+gui.F_Email.tabEmail.fontsize(8)
+gui.F_Email.lbl1.create(label,"Contact Name",True,1095,255,1,150,40,True,0,Arial,8,-2147483633,0)
+gui.F_Email.lbl1.parent("tabemail",0)
+gui.F_Email.lbl1.defaultvalue("")
+gui.F_Email.lbl1.controlgroup(0)
+gui.F_Email.txtCName.create(textbox,"",True,2445,300,0,150,240,True,0,Arial,8,-2147483643,1)
+gui.F_Email.txtCName.parent("tabemail",0)
+gui.F_Email.txtCName.maxLength(30)
+gui.F_Email.txtCName.defaultvalue("")
+gui.F_Email.txtCName.controlgroup(0)
+gui.F_Email.lbl2.create(label,"Contact Email",True,1005,255,1,2725,25,True,0,Arial,8,-2147483633,0)
+gui.F_Email.lbl2.parent("tabemail",0)
+gui.F_Email.lbl2.defaultvalue("")
+gui.F_Email.lbl2.controlgroup(0)
+gui.F_Email.txtCEmail.create(textbox,"",True,3240,300,0,2725,240,True,0,Arial,8,-2147483643,1)
+gui.F_Email.txtCEmail.parent("tabemail",0)
+gui.F_Email.txtCEmail.maxLength(50)
+gui.F_Email.txtCEmail.event(lostfocus,txtcemail_lostfocus)
+gui.F_Email.txtCEmail.defaultvalue("")
+gui.F_Email.txtCEmail.controlgroup(0)
+gui.F_Email.cmdBrowser.create(button)
+gui.F_Email.cmdBrowser.caption("^")
+gui.F_Email.cmdBrowser.visible(True)
+gui.F_Email.cmdBrowser.size(405,375)
+gui.F_Email.cmdBrowser.zorder(0)
+gui.F_Email.cmdBrowser.position(6020,200)
+gui.F_Email.cmdBrowser.enabled(True)
+gui.F_Email.cmdBrowser.parent("tabemail",0)
+gui.F_Email.cmdBrowser.fontname("Arial")
+gui.F_Email.cmdBrowser.fontsize(8)
+gui.F_Email.cmdBrowser.event(click,cmdbrowser_click)
+gui.F_Email.cmdBrowser.defaultvalue("")
+gui.F_Email.cmdBrowser.controlgroup(0)
+gui.F_Email.lbl3.create(label,"Previous Emails",True,1140,255,1,150,585,True,0,Arial,8,-2147483633,0)
+gui.F_Email.lbl3.parent("tabemail",0)
+gui.F_Email.lbl3.defaultvalue("")
+gui.F_Email.lbl3.controlgroup(0)
+gui.F_Email.gsfgPrevEmail.create(gsflexgrid)
+gui.F_Email.gsfgPrevEmail.FixedRows(0)
+gui.F_Email.gsfgPrevEmail.FixedCols(0)
+gui.F_Email.gsfgPrevEmail.visible(True)
+gui.F_Email.gsfgPrevEmail.size(6270,3510)
+gui.F_Email.gsfgPrevEmail.zorder(0)
+gui.F_Email.gsfgPrevEmail.position(150,815)
+gui.F_Email.gsfgPrevEmail.enabled(True)
+gui.F_Email.gsfgPrevEmail.parent("tabemail",0)
+gui.F_Email.gsfgPrevEmail.event(commandclick,gsfgprevemail_commandclick)
+gui.F_Email.lbl4.create(label,"Recipients",True,765,255,1,170,4360,True,0,Arial,8,-2147483633,0)
+gui.F_Email.lbl4.parent("tabemail",0)
+gui.F_Email.lbl4.defaultvalue("")
+gui.F_Email.lbl4.controlgroup(0)
+gui.F_Email.lvwRecipient.create(listview)
+gui.F_Email.lvwRecipient.view(3)
+gui.F_Email.lvwRecipient.addlistviewcolumn("Contact Name",2400,0)
+gui.F_Email.lvwRecipient.addlistviewcolumn("Contact Email",3600,0)
+gui.F_Email.lvwRecipient.visible(True)
+gui.F_Email.lvwRecipient.size(6285,1440)
+gui.F_Email.lvwRecipient.zorder(0)
+gui.F_Email.lvwRecipient.position(150,4580)
+gui.F_Email.lvwRecipient.enabled(True)
+gui.F_Email.lvwRecipient.parent("tabemail",0)
+gui.F_Email.lvwRecipient.fontname("Arial")
+gui.F_Email.lvwRecipient.fontsize(8)
+gui.F_Email.cmdAdd.create(button)
+gui.F_Email.cmdAdd.caption("Add")
+gui.F_Email.cmdAdd.visible(True)
+gui.F_Email.cmdAdd.size(855,375)
+gui.F_Email.cmdAdd.zorder(0)
+gui.F_Email.cmdAdd.position(150,6095)
+gui.F_Email.cmdAdd.enabled(True)
+gui.F_Email.cmdAdd.parent("tabemail",0)
+gui.F_Email.cmdAdd.fontname("Arial")
+gui.F_Email.cmdAdd.fontsize(8)
+gui.F_Email.cmdAdd.event(click,cmdadd_click)
+gui.F_Email.cmdAdd.defaultvalue("")
+gui.F_Email.cmdAdd.controlgroup(0)
+gui.F_Email.cmdRemove.create(button)
+gui.F_Email.cmdRemove.caption("Remove")
+gui.F_Email.cmdRemove.visible(True)
+gui.F_Email.cmdRemove.size(855,375)
+gui.F_Email.cmdRemove.zorder(0)
+gui.F_Email.cmdRemove.position(1050,6095)
+gui.F_Email.cmdRemove.enabled(True)
+gui.F_Email.cmdRemove.parent("tabemail",0)
+gui.F_Email.cmdRemove.fontname("Arial")
+gui.F_Email.cmdRemove.fontsize(8)
+gui.F_Email.cmdRemove.event(click,cmdremove_click)
+gui.F_Email.cmdRemove.defaultvalue("")
+gui.F_Email.cmdRemove.controlgroup(0)
+gui.F_Email.ddlType.create(dropdownlist)
+gui.F_Email.ddlType.visible(True)
+gui.F_Email.ddlType.size(2745,330)
+gui.F_Email.ddlType.zorder(0)
+gui.F_Email.ddlType.position(150,6520)
+gui.F_Email.ddlType.enabled(True)
+gui.F_Email.ddlType.parent("tabemail",0)
+gui.F_Email.ddlType.fontname("Arial")
+gui.F_Email.ddlType.fontsize(8)
+gui.F_Email.ddlType.event(click,ddltype_change)
+gui.F_Email.ddlType.defaultvalue("")
+gui.F_Email.ddlType.controlgroup(0)
+gui.F_Email.lbl5.create(label,"From Name:",True,915,255,1,150,6920,True,0,Arial,8,-2147483633,0)
+gui.F_Email.lbl5.parent("tabemail",0)
+gui.F_Email.lbl5.defaultvalue("")
+gui.F_Email.lbl5.controlgroup(0)
+gui.F_Email.txtFromName.create(textbox,"",True,2445,300,0,150,7090,True,0,Arial,8,-2147483643,1)
+gui.F_Email.txtFromName.parent("tabemail",0)
+gui.F_Email.txtFromName.maxLength(30)
+gui.F_Email.txtFromName.defaultvalue("")
+gui.F_Email.txtFromName.controlgroup(0)
+gui.F_Email.lbl6.create(label,"Subject:",True,600,255,1,150,7430,True,0,Arial,8,-2147483633,0)
+gui.F_Email.lbl6.parent("tabemail",0)
+gui.F_Email.lbl6.defaultvalue("")
+gui.F_Email.lbl6.controlgroup(0)
+gui.F_Email.txtSubject.create(textbox,"",True,6270,300,0,150,7615,True,0,Arial,8,-2147483643,1)
+gui.F_Email.txtSubject.parent("tabemail",0)
+gui.F_Email.txtSubject.maxLength(30)
+gui.F_Email.txtSubject.defaultvalue("")
+gui.F_Email.txtSubject.controlgroup(0)
+gui.F_Email.lbl7.create(label,"Additional Body:",True,1365,255,1,150,7940,True,0,Arial,8,-2147483633,0)
+gui.F_Email.lbl7.parent("tabemail",0)
+gui.F_Email.lbl7.defaultvalue("")
+gui.F_Email.lbl7.controlgroup(0)
+gui.F_Email.mltBody.create(textboxm)
+gui.F_Email.mltBody.text("")
+gui.F_Email.mltBody.visible(True)
+gui.F_Email.mltBody.size(6270,1845)
+gui.F_Email.mltBody.zorder(0)
+gui.F_Email.mltBody.position(150,8125)
+gui.F_Email.mltBody.enabled(True)
+gui.F_Email.mltBody.alignment(0)
+gui.F_Email.mltBody.parent("tabemail",0)
+gui.F_Email.mltBody.fontname("Arial")
+gui.F_Email.mltBody.fontsize(8)
+gui.F_Email.mltBody.BackColor(-2147483643)
+gui.F_Email.mltBody.defaultvalue("")
+gui.F_Email.mltBody.controlgroup(0)
+gui.F_Email.lbl8.create(label,"HTML File Location",True,1395,225,1,150,10010,True,0,Arial,8,-2147483633,0)
+gui.F_Email.lbl8.parent("tabemail",0)
+gui.F_Email.lbl8.defaultvalue("")
+gui.F_Email.lbl8.controlgroup(0)
+gui.F_Email.txtHTMLFile.create(textbox,"",True,6270,300,0,150,10195,False,0,Arial,8,-2147483643,1)
+gui.F_Email.txtHTMLFile.parent("tabemail",0)
+gui.F_Email.txtHTMLFile.defaultvalue("")
+gui.F_Email.txtHTMLFile.controlgroup(0)
+gui.F_Email.cmdSend.create(button)
+gui.F_Email.cmdSend.caption("Send")
+gui.F_Email.cmdSend.visible(True)
+gui.F_Email.cmdSend.size(855,375)
+gui.F_Email.cmdSend.zorder(0)
+gui.F_Email.cmdSend.position(150,10630)
+gui.F_Email.cmdSend.enabled(True)
+gui.F_Email.cmdSend.parent("tabemail",0)
+gui.F_Email.cmdSend.fontname("Arial")
+gui.F_Email.cmdSend.fontsize(8)
+gui.F_Email.cmdSend.event(click,cmdsend_click)
+gui.F_Email.cmdSend.defaultvalue("")
+gui.F_Email.cmdSend.controlgroup(0)
+gui.F_Email.lbl9.create(label,"Type",True,465,255,1,150,560,True,0,Arial,8,-2147483633,0)
+gui.F_Email.lbl9.parent("tabemail",1)
+gui.F_Email.lbl9.defaultvalue("")
+gui.F_Email.lbl9.controlgroup(0)
+gui.F_Email.ddlModType.create(dropdownlist)
+gui.F_Email.ddlModType.visible(True)
+gui.F_Email.ddlModType.size(2745,330)
+gui.F_Email.ddlModType.zorder(0)
+gui.F_Email.ddlModType.position(150,85)
+gui.F_Email.ddlModType.enabled(True)
+gui.F_Email.ddlModType.parent("tabemail",1)
+gui.F_Email.ddlModType.fontname("Arial")
+gui.F_Email.ddlModType.fontsize(8)
+gui.F_Email.ddlModType.event(click,ddlmodtype_change)
+gui.F_Email.ddlModType.defaultvalue("")
+gui.F_Email.ddlModType.controlgroup(0)
+gui.F_Email.txtModType.create(textbox,"",True,2490,300,0,150,770,True,0,Arial,8,-2147483643,1)
+gui.F_Email.txtModType.parent("tabemail",1)
+gui.F_Email.txtModType.maxLength(30)
+gui.F_Email.txtModType.event(lostfocus,txtmodtype_lostfocus)
+gui.F_Email.txtModType.defaultvalue("")
+gui.F_Email.txtModType.controlgroup(0)
+gui.F_Email.lbl10.create(label,"Subject",True,645,255,1,150,1740,True,0,Arial,8,-2147483633,0)
+gui.F_Email.lbl10.parent("tabemail",1)
+gui.F_Email.lbl10.defaultvalue("")
+gui.F_Email.lbl10.controlgroup(0)
+gui.F_Email.txtModSubject.create(textbox,"",True,6270,300,0,150,1990,True,0,Arial,8,-2147483643,1)
+gui.F_Email.txtModSubject.parent("tabemail",1)
+gui.F_Email.txtModSubject.maxLength(30)
+gui.F_Email.txtModSubject.defaultvalue("")
+gui.F_Email.txtModSubject.controlgroup(0)
+gui.F_Email.lbl11.create(label,"Additional Body",True,1185,255,1,150,2365,True,0,Arial,8,-2147483633,0)
+gui.F_Email.lbl11.parent("tabemail",1)
+gui.F_Email.lbl11.defaultvalue("")
+gui.F_Email.lbl11.controlgroup(0)
+gui.F_Email.mltModBody.create(textboxm)
+gui.F_Email.mltModBody.text("")
+gui.F_Email.mltModBody.visible(True)
+gui.F_Email.mltModBody.size(6270,1845)
+gui.F_Email.mltModBody.zorder(0)
+gui.F_Email.mltModBody.position(150,2575)
+gui.F_Email.mltModBody.enabled(True)
+gui.F_Email.mltModBody.alignment(0)
+gui.F_Email.mltModBody.parent("tabemail",1)
+gui.F_Email.mltModBody.fontname("Arial")
+gui.F_Email.mltModBody.fontsize(8)
+gui.F_Email.mltModBody.BackColor(-2147483643)
+gui.F_Email.mltModBody.defaultvalue("")
+gui.F_Email.mltModBody.controlgroup(0)
+gui.F_Email.lbl12.create(label,"HTML File Location",True,1440,255,1,150,4475,True,0,Arial,8,-2147483633,0)
+gui.F_Email.lbl12.parent("tabemail",1)
+gui.F_Email.lbl12.defaultvalue("")
+gui.F_Email.lbl12.controlgroup(0)
+gui.F_Email.txtModHTMLFile.create(textbox,"",True,5865,300,0,150,4690,False,0,Arial,8,-2147483643,1)
+gui.F_Email.txtModHTMLFile.parent("tabemail",1)
+gui.F_Email.txtModHTMLFile.defaultvalue("")
+gui.F_Email.txtModHTMLFile.controlgroup(0)
+gui.F_Email.cmdBrowseFile.create(button)
+gui.F_Email.cmdBrowseFile.caption("^")
+gui.F_Email.cmdBrowseFile.visible(True)
+gui.F_Email.cmdBrowseFile.size(405,375)
+gui.F_Email.cmdBrowseFile.zorder(0)
+gui.F_Email.cmdBrowseFile.position(6040,4630)
+gui.F_Email.cmdBrowseFile.enabled(True)
+gui.F_Email.cmdBrowseFile.parent("tabemail",1)
+gui.F_Email.cmdBrowseFile.fontname("Arial")
+gui.F_Email.cmdBrowseFile.fontsize(8)
+gui.F_Email.cmdBrowseFile.event(click,cmdbrowsefile_click)
+gui.F_Email.cmdBrowseFile.defaultvalue("")
+gui.F_Email.cmdBrowseFile.controlgroup(0)
+gui.F_Email.cmdAddUp.create(button)
+gui.F_Email.cmdAddUp.caption("Add/Update")
+gui.F_Email.cmdAddUp.visible(True)
+gui.F_Email.cmdAddUp.size(1140,375)
+gui.F_Email.cmdAddUp.zorder(0)
+gui.F_Email.cmdAddUp.position(150,5045)
+gui.F_Email.cmdAddUp.enabled(True)
+gui.F_Email.cmdAddUp.parent("tabemail",1)
+gui.F_Email.cmdAddUp.fontname("Arial")
+gui.F_Email.cmdAddUp.fontsize(8)
+gui.F_Email.cmdAddUp.event(click,cmdaddup_click)
+gui.F_Email.cmdAddUp.defaultvalue("")
+gui.F_Email.cmdAddUp.controlgroup(0)
+gui.F_Email.cmdDelete.create(button)
+gui.F_Email.cmdDelete.caption("Delete")
+gui.F_Email.cmdDelete.visible(True)
+gui.F_Email.cmdDelete.size(855,375)
+gui.F_Email.cmdDelete.zorder(0)
+gui.F_Email.cmdDelete.position(1350,5045)
+gui.F_Email.cmdDelete.enabled(True)
+gui.F_Email.cmdDelete.parent("tabemail",1)
+gui.F_Email.cmdDelete.fontname("Arial")
+gui.F_Email.cmdDelete.fontsize(8)
+gui.F_Email.cmdDelete.event(click,cmddelete_click)
+gui.F_Email.cmdDelete.defaultvalue("")
+gui.F_Email.cmdDelete.controlgroup(0)
+gui.F_Email.lbl13.create(label,"From Name",True,1500,255,1,150,1145,True,0,Arial,8,-2147483633,0)
+gui.F_Email.lbl13.parent("tabemail",1)
+gui.F_Email.lbl13.defaultvalue("")
+gui.F_Email.lbl13.controlgroup(0)
+gui.F_Email.txtModName.create(textbox,"",True,2445,300,0,150,1370,True,0,Arial,8,-2147483643,1)
+gui.F_Email.txtModName.parent("tabemail",1)
+gui.F_Email.txtModName.maxLength(30)
+gui.F_Email.txtModName.defaultvalue("")
+gui.F_Email.txtModName.controlgroup(0)
+gui.F_Email.lbl14.create(label,"From Email",True,825,255,1,2800,1145,True,0,Arial,8,-2147483633,0)
+gui.F_Email.lbl14.parent("tabemail",1)
+gui.F_Email.lbl14.defaultvalue("")
+gui.F_Email.lbl14.controlgroup(0)
+gui.F_Email.txtModEmail.create(textbox,"",True,3240,300,0,2785,1370,True,0,Arial,8,-2147483643,1)
+gui.F_Email.txtModEmail.parent("tabemail",1)
+gui.F_Email.txtModEmail.maxLength(30)
+gui.F_Email.txtModEmail.defaultvalue("")
+gui.F_Email.txtModEmail.controlgroup(0)
+gui.F_Email.lbl15.create(label,"From Email:",True,900,255,1,2810,6890,True,0,Arial,8,-2147483633,0)
+gui.F_Email.lbl15.parent("tabemail",0)
+gui.F_Email.lbl15.defaultvalue("")
+gui.F_Email.lbl15.controlgroup(0)
+gui.F_Email.txtFromEmail.create(textbox,"",True,3240,300,0,2800,7075,True,0,Arial,8,-2147483643,1)
+gui.F_Email.txtFromEmail.parent("tabemail",0)
+gui.F_Email.txtFromEmail.maxLength(30)
+gui.F_Email.txtFromEmail.defaultvalue("")
+gui.F_Email.txtFromEmail.controlgroup(0)
+gui.F_Email.ddlModType.tabstop(True)
+gui.F_Email.ddlModType.tabindex(1)
+gui.F_Email.txtModType.tabstop(True)
+gui.F_Email.txtModType.tabindex(2)
+gui.F_Email.txtModName.tabstop(True)
+gui.F_Email.txtModName.tabindex(3)
+gui.F_Email.txtModEmail.tabstop(True)
+gui.F_Email.txtModEmail.tabindex(4)
+gui.F_Email.txtModSubject.tabstop(True)
+gui.F_Email.txtModSubject.tabindex(5)
+gui.F_Email.mltModBody.tabstop(True)
+gui.F_Email.mltModBody.tabindex(6)
+gui.F_Email.cmdBrowseFile.tabstop(True)
+gui.F_Email.cmdBrowseFile.tabindex(7)
+gui.F_Email.cmdAddUp.tabstop(True)
+gui.F_Email.cmdAddUp.tabindex(8)
+gui.F_Email.cmdDelete.tabstop(True)
+gui.F_Email.cmdDelete.tabindex(9)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Variable.UDT.uType.Define("Type",String,Type)
+Variable.UDT.uType.Define("Contact",String,Contact)
+Variable.UDT.uType.Define("Subject",String,Subject)
+Variable.UDT.uType.Define("Attachment",String,Attachment)
+Variable.UDT.uType.Define("Email",String,Email)
+Variable.UDT.uType.Define("Body",String,Body)
+Variable.uGlobal.uType.Declare("uType")
+Variable.Global.iKey.Declare(Long,0)
+Variable.UDT.uHist.Define("Contact",String,Contact)
+Variable.UDT.uHist.Define("Email",String,Email)
+Variable.UDT.uHist.Define("Subject",String,Subject)
+Variable.UDT.uHist.Define("Body",String,Body)
+Variable.UDT.uHist.Define("Attachment",String,Attachment)
+Variable.UDT.uHist.Define("Date",String,Date)
+Variable.UDT.uHist.Define("Time",String,Time)
+Variable.uGlobal.uHist.Declare("uHist")
+Variable.uGlobal.uTemp.Declare("uHist")
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+F.Intrinsic.Control.If(V.Caller.Hook,=,51000)
+	V.Passed.CRM-cmdDashGAB-1.Set("HTML Email")
+	F.Intrinsic.Control.CallSub(F_email_unload)
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,51015)
+	F.Intrinsic.Control.CallSub(Checkdirectory)
+	F.Intrinsic.Control.CallSub(Setupscreen)
+	F.Intrinsic.Control.CallSub(Buildstyle)
+	Gui.F_Email..Show
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3750_CRM_Email_Type.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_email_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Main.End
+
+Program.Sub.CheckDirectory.Start
+F.Intrinsic.Control.SetErrorHandler("CheckDirectory_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sFilePath.Declare(String)
+V.Local.bExist.Declare(Boolean)
+
+F.Intrinsic.String.Build("{0}\HTML",V.Caller.FilesDir,V.Local.sFilePath)
+F.Intrinsic.File.DirExists(V.Local.sFilePath,V.Local.bExist)
+
+F.Intrinsic.Control.If(V.Local.bExist,<>,True)
+	F.Intrinsic.File.CreateDir(V.Local.sFilePath)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("CheckDirectory_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3750_CRM_Email_Type.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.CheckDirectory.End
+
+program.sub.f_email_unload.start
+F.Intrinsic.Control.SetErrorHandler("f_email_unload_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.ODBC.Connection!con.Close
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("f_email_unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3750_CRM_Email_Type.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.f_email_unload.end
+
+program.sub.cmdremove_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdremove_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iKey.Declare(Long)
+
+V.Local.iKey.Set(V.Screen.F_Email!lvwRecipient.SelectedItemKey)
+Gui.F_Email.lvwRecipient.RemoveItem(V.Local.iKey)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdremove_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3750_CRM_Email_Type.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_email_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdremove_click.end
+
+program.sub.cmdadd_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdadd_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sName.Declare(String)
+V.Local.sEmail.Declare(String)
+
+V.Local.sName.Set(V.Screen.F_Email!txtCName.Text)
+V.Local.sEmail.Set(V.Screen.F_Email!txtCEmail.Text)
+
+'Check for contact name and email
+F.Intrinsic.Control.If(V.Local.sEmail.Trim,=,"","OR",V.Local.sName.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("You must have an Contact Name and Email","Error")
+F.Intrinsic.Control.Else
+	F.Intrinsic.Math.Add(V.Global.iKey,1,V.Global.iKey)
+	Gui.F_Email.lvwRecipient.AddListItem(V.Global.iKey,V.Local.sName)
+	Gui.F_Email.lvwRecipient.SetListItemSubItemText(V.Global.iKey,1,V.Local.sEmail)
+	Gui.F_Email.txtCName.Text("")
+	Gui.F_Email.txtCEmail.Text("")
+
+	F.Intrinsic.Control.CallSub(Buildstyle)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdadd_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3750_CRM_Email_Type.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdadd_click.end
+
+program.sub.ddltype_change.start
+F.Intrinsic.Control.SetErrorHandler("ddltype_change_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iOrd.Declare(Long)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.F_Email!ddlType.Text,=,"--Select Type--")
+	F.Intrinsic.Control.CallSub(Cleartype)
+F.Intrinsic.Control.ElseIf(V.Screen.F_Email!ddlType.Text,=,"")
+	Gui.F_Email.ddlType.Text("--Select Type--")
+	F.Intrinsic.Control.CallSub(Cleartype)
+F.Intrinsic.Control.Else
+	F.Intrinsic.Variable.UDTSeek(V.uGlobal.uType!Type,V.Screen.F_Email!ddlType.Text,0,V.Local.sRet)
+	V.Local.iOrd.Set(V.Local.sRet)
+	Gui.F_Email.txtFromName.Text(V.uGlobal.uType(V.Local.iOrd)!Contact)
+	Gui.F_Email.txtFromEmail.Text(V.uGlobal.uType(V.Local.iOrd)!Email)
+	Gui.F_Email.txtSubject.Text(V.uGlobal.uType(V.Local.iOrd)!Subject)
+	Gui.F_Email.mltBody.Text(V.uGlobal.uType(V.Local.iOrd)!Body)
+	Gui.F_Email.txtHTMLFile.Text(V.uGlobal.uType(V.Local.iOrd)!Attachment)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("ddltype_change_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3750_CRM_Email_Type.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_email_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.ddltype_change.end
+
+program.sub.cmdsend_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdsend_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sFromN.Declare(String)
+V.Local.sFromE.Declare(String)
+V.Local.sContactN.Declare(String)
+V.Local.sContactE.Declare(String)
+V.Local.sSubject.Declare(String)
+V.Local.sBody.Declare(String)
+V.Local.sHTML.Declare(String)
+V.Local.sType.Declare(String)
+V.Local.iC.Declare(Long)
+V.Local.sRows.Declare(String)
+V.Local.sData.Declare(String)
+V.Local.sFile.Declare(String)
+V.Local.sSender.Declare(String)
+V.Local.sRecipient.Declare(String)
+V.Local.iID.Declare(Long)
+V.Local.sSQL.Declare(String)
+V.Local.sDate.Declare(String)
+V.Local.sTime.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sAppendHeader.Declare(String)
+V.Local.sAddBody.Declare(String)
+
+V.Local.sFromN.Set(V.Screen.F_Email!txtFromName.Text)
+V.Local.sFromE.Set(V.Screen.F_Email!txtFromEmail.Text)
+V.Local.sSubject.Set(V.Screen.F_Email!txtSubject.Text)
+V.Local.sAddBody.Set(V.Screen.F_Email!mltBody.Text)
+V.Local.sHTML.Set(V.Screen.F_Email!txtHTMLFile.Text)
+V.Local.sType.Set(V.Screen.F_Email!ddlType.Text)
+V.Local.sDate.Set(V.Ambient.Date)
+V.Local.sTime.Set(V.Ambient.Time)
+
+'Building additional header so that the HTML shows up in the Body of the email properly.
+F.Intrinsic.String.Build("MIME-Version: 1.0{0}Content-Type: multipart/related;{0} boundary={1}------------4DF0C139497F9372EEC9A7E8{1}{0}X-EsetId: 3D3C3F398EE628396C7F6E{0}{0}This is a multi-part message in MIME format.{0}--------------4DF0C139497F9372EEC9A7E8{0}Content-Type: text/html; charset=utf-8{0}Content-Transfer-Encoding: 8bit",V.Ambient.NewLine,V.Ambient.DblQuote,V.Local.sAppendHeader)
+
+F.Intrinsic.Control.If(V.Screen.F_Email!lvwRecipient.ListItemCount,=,0)
+	F.Intrinsic.UI.Msgbox("You must select at least one recipient.","Missing Recipient")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Local.sFromE.Trim,=,"","OR",V.Local.sFromN.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("You must have a From Name and Email.","Missing From Information")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+V.Local.sRows.Set(V.Screen.F_Email!lvwRecipient.ListViewContents)
+F.Intrinsic.String.Split(V.Local.sRows,"$@$",V.Local.sRows)
+
+F.Intrinsic.File.GetFileNameFromFQN(V.Local.sHTML,V.Local.sFile)
+
+'Build recipient list for email
+F.Intrinsic.Control.For(V.Local.iC,0,V.Local.sRows.UBound,1)
+	F.Intrinsic.String.Split(V.Local.sRows(V.Local.iC),"*!*",V.Local.sData)
+	V.Local.sContactN.Set(V.Local.sData(0))
+	V.Local.sContactE.Set(V.Local.sData(1))
+	F.Intrinsic.String.Build("{0}{1}*!*{2}@!@",V.Local.sRecipient,V.Local.sContactN,V.Local.sContactE,V.Local.sRecipient)
+
+	'Upload recipient information
+	F.Intrinsic.String.Build("INSERT INTO GCG_3750_EMAIL_HIST VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')",V.Local.sContactN.Trim,V.Local.sContactE.Trim,V.Local.sSubject.PSQLFriendly,V.Local.sAddBody.PSQLFriendly,V.Local.sFile.PSQLFriendly,V.Local.sDate,V.Local.sTime,V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+F.Intrinsic.Control.Next(V.Local.iC)
+
+'Build Sender Info
+F.Intrinsic.String.Build("{0}*!*{1}",V.Local.sFromE,V.Local.sFromN,V.Local.sSender)
+'Get ID
+F.Global.Security.GetUserId(V.Caller.User,V.Caller.CompanyCode,V.Local.iID)
+
+'Set up body information
+F.Intrinsic.File.File2String(V.Local.sHTML,V.Local.sBody)
+F.Intrinsic.String.Build("{0}{1}{1}--------------4DF0C139497F9372EEC9A7E8--",V.Local.sBody,V.Ambient.NewLine,V.Local.sBody)
+F.Intrinsic.String.Replace(V.Local.sBody,"ADDITIONALBODY",V.Local.sAddBody,V.Local.sBody)
+
+'Queue Email to be sent
+F.Global.Messaging.QueueMessage(V.Caller.CompanyCode,V.Local.iID,"CRM Email",V.Local.sSubject,V.Local.sSender,V.Local.sRecipient,V.Local.sBody,5,,False,V.Local.sAppendHeader,,,,,,,,False)
+
+Gui.F_Email.lvwRecipient.ClearItems
+F.Intrinsic.Control.CallSub(Cleartype)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdsend_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3750_CRM_Email_Type.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_email_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdsend_click.end
+
+program.sub.cmdbrowsefile_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdbrowsefile_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sFilePath.Declare(String)
+
+'Allow user to select HTML file to attach to email.
+F.Intrinsic.String.Build("{0}\HTML\Select File",V.Caller.FilesDir,V.Local.sFilePath)
+F.Intrinsic.UI.ShowOpenFileDialog(V.Local.sFilePath,"html|*.html","",V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	Gui.F_Email.txtModHTMLFile.Text(V.Local.sRet)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdbrowsefile_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3750_CRM_Email_Type.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_email_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdbrowsefile_click.end
+
+program.sub.cmdaddup_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdaddup_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.dDate.Declare(Date)
+V.Local.dTime.Declare(Date)
+V.Local.iOrd.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.sBody.Declare(String)
+V.Local.sSubject.Declare(String)
+V.Local.sType.Declare(String)
+
+V.Local.dDate.Set(V.Ambient.Date)
+V.Local.dTime.Set(V.Ambient.Time)
+V.Local.sSubject.Set(V.Screen.F_Email!txtModSubject.Text)
+V.Local.sBody.Set(V.Screen.F_Email!mltModBody.Text)
+V.Local.sType.Set(V.Screen.F_Email!txtModType.Text)
+
+F.Intrinsic.Control.If(V.Local.sType.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("You must enter a Type","Type Missing")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'New Type
+F.Intrinsic.Control.If(V.Screen.F_Email!ddlModType.Text,=,"--New Type--")
+	F.Intrinsic.String.Build("INSERT INTO GCG_3750_EMAIL_TYPE VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}')",V.Screen.F_Email!txtModType.Text,V.Screen.F_Email!txtModName.Text,V.Screen.F_Email!txtModEmail.Text,V.Local.sSubject.PSQLFriendly,V.Screen.F_Email!txtModHTMLFile.Text,V.Local.dDate,V.Local.dTime,V.Local.sBody.PSQLFriendly,V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	
+	'Add type to UDT for faster loading information
+	F.Intrinsic.Control.If(V.uGlobal.uType.UBound,=,-1)
+		F.Intrinsic.Math.Add(V.uGlobal.uType.UBound,1,V.Local.iOrd)
+		V.uGlobal.uType.Redim(0,V.Local.iOrd)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.uGlobal.uType.UBound,1,V.Local.iOrd)
+		V.uGlobal.uType.RedimPreserve(0,V.Local.iOrd)
+	F.Intrinsic.Control.EndIf
+	
+	V.uGlobal.uType(V.Local.iOrd)!Type.Set(V.Screen.F_Email!txtModType.Text)
+	V.uGlobal.uType(V.Local.iOrd)!Contact.Set(V.Screen.F_Email!txtModName.Text)
+	V.uGlobal.uType(V.Local.iOrd)!Email.Set(V.Screen.F_Email!txtModEmail.Text)
+	V.uGlobal.uType(V.Local.iOrd)!Subject.Set(V.Screen.F_Email!txtModSubject.Text)
+	V.uGlobal.uType(V.Local.iOrd)!Attachment.Set(V.Screen.F_Email!txtModHTMLFile.Text)
+	V.uGlobal.uType(V.Local.iOrd)!Body.Set(V.Screen.F_Email!mltModBody.Text)
+	'Add Type to drop down lists
+	Gui.F_Email.ddlModType.AddItem(V.Screen.F_Email!txtModType.Text)
+	Gui.F_Email.ddlType.AddItem(V.Screen.F_Email!txtModType.Text)
+'Existing Type
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("UPDATE GCG_3750_EMAIL_TYPE SET CONTACT = '{0}', EMAIL = '{1}', SUBJECT = '{2}', ATTACHMENT = '{3}', DATE = '{4}', TIME = '{5}', BODY = '{6}'",V.Screen.F_Email!txtModName.Text,V.Screen.F_Email!txtModEmail.Text,V.Local.sSubject.PSQLFriendly,V.Screen.F_Email!txtModHTMLFile.Text,V.Local.dDate,V.Local.dTime,V.Local.sBody.PSQLFriendly,V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	F.Intrinsic.Variable.UDTSeek(V.uGlobal.uType!Type,V.Screen.F_Email!txtModType.Text,0,V.Local.sRet)
+	V.Local.iOrd.Set(V.Local.sRet)
+	V.uGlobal.uType(V.Local.iOrd)!Contact.Set(V.Screen.F_Email!txtModName.Text)
+	V.uGlobal.uType(V.Local.iOrd)!Email.Set(V.Screen.F_Email!txtModEmail.Text)
+	V.uGlobal.uType(V.Local.iOrd)!Subject.Set(V.Screen.F_Email!txtModSubject.Text)
+	V.uGlobal.uType(V.Local.iOrd)!Attachment.Set(V.Screen.F_Email!txtModHTMLFile.Text)
+	V.uGlobal.uType(V.Local.iOrd)!Body.Set(V.Screen.F_Email!mltModBody.Text)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.CallSub(Clearmod)
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdaddup_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3750_CRM_Email_Type.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_email_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdaddup_click.end
+
+program.sub.cmddelete_click.start
+F.Intrinsic.Control.SetErrorHandler("cmddelete_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSQL.Declare(String)
+
+'Removes Type if customer has selected one
+F.Intrinsic.Control.If(V.Screen.F_Email!ddlModType.Text,<>,"--New Type--")
+	F.Intrinsic.String.Build("DELETE FROM GCG_3750_EMAIL_TYPE WHERE TYPE = '{0}'",V.Screen.F_Email!txtModType.Text,V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	'Removes the item from the DDL
+	Gui.F_Email.ddlModType.ClearItems
+	Gui.F_Email.ddlType.ClearItems
+	F.Intrinsic.Control.CallSub(Setupscreen)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.CallSub(Clearmod)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmddelete_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3750_CRM_Email_Type.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_email_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmddelete_click.end
+
+Program.Sub.SetupScreen.Start
+F.Intrinsic.Control.SetErrorHandler("SetupScreen_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iC.Declare(Long)
+
+V.uGlobal.uType.Redim(-1,-1)
+
+'Set the first screen to be focused
+Gui.F_Email.tabEmail.SetTab(0)
+Gui.F_Email.ddlType.AddItem("--Select Type--")
+Gui.F_Email.ddlModType.AddItem("--New Type--")
+Gui.F_Email.ddlModType.Text("--New Type--")
+Gui.F_Email.ddlType.Text("--Select Type--")
+
+F.ODBC.Connection!con.OpenLocalRecordsetRW("rst","SELECT * FROM GCG_3750_Email_Type ORDER BY TYPE")
+
+F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,<>,True)
+	F.Intrinsic.Variable.LoadUDTFromRecordset("con","rst","uGlobal.uType",0)
+F.Intrinsic.Control.EndIf
+
+F.ODBC.con!rst.Close
+
+F.Intrinsic.Control.If(V.uGlobal.uType.UBound,<>,-1)
+	F.Intrinsic.Control.For(V.Local.iC,0,V.uGlobal.uType.UBound,1)
+		Gui.F_Email.ddlType.AddItem(V.uGlobal.uType(V.Local.iC)!Type)
+		Gui.F_Email.ddlModType.AddItem(V.uGlobal.uType(V.Local.iC)!Type)
+	F.Intrinsic.Control.Next(V.Local.iC)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("SetupScreen_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3750_CRM_Email_Type.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_email_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.SetupScreen.End
+
+Program.Sub.Buildstyle.Start
+F.Intrinsic.Control.SetErrorHandler("Buildstyle_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_Email.gsfgPrevEmail.Cols(7)
+
+Gui.F_Email.gsfgPrevEmail.Rows(1)
+Gui.F_Email.gsfgPrevEmail.Rows(2)
+Gui.F_Email.gsfgPrevEmail.FixedRows(1)
+
+'Header Style
+'Column 0
+Gui.F_Email.gsfgPrevEmail.TextMatrix(0,0,"Contact")
+Gui.F_Email.gsfgPrevEmail.ColWidth(0,1800)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(1,0,"Type","Locked",True)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(1,0,"Format","Alignment",4)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(1,0,"Fontstyle","Bold",True)
+
+'Column 1
+Gui.F_Email.gsfgPrevEmail.TextMatrix(1,0,"Email")
+Gui.F_Email.gsfgPrevEmail.ColWidth(1,2500)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(1,1,"Type","Locked",True)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(1,1,"Format","Alignment",4)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(1,1,"Fontstyle","Bold",True)
+
+'Column 2
+Gui.F_Email.gsfgPrevEmail.TextMatrix(2,0,"Subject")
+Gui.F_Email.gsfgPrevEmail.ColWidth(2,2800)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(1,2,"Type","Locked",True)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(1,2,"Format","Alignment",4)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(1,2,"Fontstyle","Bold",True)
+
+'Column 3
+Gui.F_Email.gsfgPrevEmail.TextMatrix(3,0,"Body")
+Gui.F_Email.gsfgPrevEmail.ColWidth(3,800)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(1,3,"Type","Locked",True)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(1,3,"Format","Alignment",4)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(1,3,"Fontstyle","Bold",True)
+
+'Column 4
+Gui.F_Email.gsfgPrevEmail.TextMatrix(4,0,"Attachment")
+Gui.F_Email.gsfgPrevEmail.ColWidth(4,2500)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(1,4,"Type","Locked",True)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(1,4,"Format","Alignment",4)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(1,4,"Fontstyle","Bold",True)
+
+'Column 5
+Gui.F_Email.gsfgPrevEmail.TextMatrix(5,0,"Date")
+Gui.F_Email.gsfgPrevEmail.ColWidth(5,1000)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(1,5,"Type","Locked",True)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(1,5,"Format","Alignment",4)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(1,5,"Fontstyle","Bold",True)
+
+'Column 6
+Gui.F_Email.gsfgPrevEmail.TextMatrix(6,0,"Time")
+Gui.F_Email.gsfgPrevEmail.ColWidth(6,1000)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(1,6,"Type","Locked",True)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(1,6,"Format","Alignment",4)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(1,6,"Fontstyle","Bold",True)
+
+'Row Style
+'Column 0
+Gui.F_Email.gsfgPrevEmail.BuildStyle(2,0,"Type","Locked",True)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(2,0,"Format","Alignment",2)
+
+'Column 1
+Gui.F_Email.gsfgPrevEmail.BuildStyle(2,1,"Type","Locked",True)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(2,1,"Format","Alignment",2)
+
+'Column 2
+Gui.F_Email.gsfgPrevEmail.BuildStyle(2,2,"Type","Locked",True)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(2,2,"Format","Alignment",2)
+
+'Column 3
+Gui.F_Email.gsfgPrevEmail.BuildStyle(2,3,"Type","Command","Body")
+Gui.F_Email.gsfgPrevEmail.BuildStyle(2,3,"Format","Alignment",4)
+
+'Column 4
+Gui.F_Email.gsfgPrevEmail.BuildStyle(2,4,"Type","Locked",True)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(2,4,"Format","Alignment",2)
+
+'Column 5
+Gui.F_Email.gsfgPrevEmail.BuildStyle(2,5,"Type","Locked",True)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(2,5,"Format","Alignment",4)
+
+'Column 6
+Gui.F_Email.gsfgPrevEmail.BuildStyle(2,6,"Type","Locked",True)
+Gui.F_Email.gsfgPrevEmail.BuildStyle(2,6,"Format","Alignment",4)
+
+Gui.F_Email.gsfgPrevEmail.ApplyStyle(0,1)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Buildstyle_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3750_CRM_Email_Type.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_email_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Buildstyle.End
+
+program.sub.ddlmodtype_change.start
+F.Intrinsic.Control.SetErrorHandler("ddlmodtype_change_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.iOrd.Declare(Long)
+
+F.Intrinsic.Control.If(V.Screen.F_Email!ddlModType.Text,=,"--New Type--")
+	F.Intrinsic.Control.CallSub(Clearmod)
+F.Intrinsic.Control.ElseIf(V.Screen.F_Email!ddlModType.Text,=,"")
+	Gui.F_Email.ddlModType.Text("--New Type--")
+F.Intrinsic.Control.Else
+	Gui.F_Email.txtModType.Enabled(False)
+	F.Intrinsic.Variable.UDTSeek(V.uGlobal.uType!Type,V.Screen.F_Email!ddlModType.Text,0,V.Local.sRet)
+	V.Local.iOrd.Set(V.Local.sRet.Long)
+	Gui.F_Email.txtModType.Text(V.uGlobal.uType(V.Local.iOrd)!Type)
+	Gui.F_Email.txtModName.Text(V.uGlobal.uType(V.Local.iOrd)!Contact)
+	Gui.F_Email.txtModEmail.Text(V.uGlobal.uType(V.Local.iOrd)!Email)
+	Gui.F_Email.txtModSubject.Text(V.uGlobal.uType(V.Local.iOrd)!Subject)
+	Gui.F_Email.mltModBody.Text(V.uGlobal.uType(V.Local.iOrd)!Body)
+	Gui.F_Email.txtModHTMLFile.Text(V.uGlobal.uType(V.Local.iOrd)!Attachment)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("ddlmodtype_change_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3750_CRM_Email_Type.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_email_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.ddlmodtype_change.end
+
+Program.Sub.ClearMod.Start
+F.Intrinsic.Control.SetErrorHandler("ClearMod_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Keep the program from entering a loop
+F.Intrinsic.Control.If(V.Screen.F_Email!ddlModType.Text,<>,"--New Type--")
+	Gui.F_Email.ddlModType.Text("--New Type--")
+F.Intrinsic.Control.EndIf
+
+Gui.F_Email.txtModType.Enabled(True)
+Gui.F_Email.txtModType.Text("")
+Gui.F_Email.txtModName.Text("")
+Gui.F_Email.txtModEmail.Text("")
+Gui.F_Email.txtModSubject.Text("")
+Gui.F_Email.mltModBody.Text("")
+Gui.F_Email.txtModHTMLFile.Text("")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("ClearMod_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3750_CRM_Email_Type.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_email_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.ClearMod.End
+
+program.sub.cmdbrowser_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdbrowser_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.iWidths.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.sSQL.Declare(String)
+
+'Allow user to select customers set up with specific customer
+F.Intrinsic.String.Split("Contact Name*!*Contact Email","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("2000*!*3000","*!*",V.Local.iWidths)
+
+F.Intrinsic.String.Build("SELECT NAME, EMAIL1 FROM CONTACT WHERE CUST = '{0}'",V.Passed.DATA-CRM-CompID,V.Local.sSQL)
+F.Intrinsic.UI.Browser("Select a Contact","con",V.Local.sSQL,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_Email.txtCName.Text(V.Local.sRet(0))
+	Gui.F_Email.txtCEmail.Text(V.Local.sRet(1))
+	
+	F.Intrinsic.Control.CallSub(Loadhistory,"Email",V.Local.sRet(1))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdbrowser_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3750_CRM_Email_Type.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_email_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdbrowser_click.end
+
+Program.Sub.ClearType.Start
+F.Intrinsic.Control.SetErrorHandler("ClearType_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Keep program from entering an infinte loop
+F.Intrinsic.Control.If(V.Screen.F_Email!ddlType.Text,<>,"--Select Type--")
+	Gui.F_Email.ddlType.Text("--Select Type--")
+F.Intrinsic.Control.EndIf
+
+Gui.F_Email.txtFromName.Text("")
+Gui.F_Email.txtFromEmail.Text("")
+Gui.F_Email.txtSubject.Text("")
+Gui.F_Email.mltBody.Text("")
+Gui.F_Email.txtHTMLFile.Text("")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("ClearType_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3750_CRM_Email_Type.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_email_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.ClearType.End
+
+Program.Sub.LoadHistory.Start
+F.Intrinsic.Control.SetErrorHandler("LoadHistory_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.iC.Declare(Long)
+
+F.Intrinsic.String.Build("SELECT * FROM GCG_3750_EMAIL_HIST WHERE EMAIL = '{0}'",V.Args.Email.Trim,V.Local.sSQL)
+F.ODBC.Connection!con.OpenLocalRecordsetRW("rst",V.Local.sSQL)
+
+F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,<>,True)
+	F.Intrinsic.Variable.LoadUDTFromRecordset("con","rst","uGlobal.uHist",0)
+	Gui.F_Email.gsfgPrevEmail.Visible(False)
+	Gui.F_Email.gsfgPrevEmail.LoadFromUDT("uGlobal.uHist","Contact::0*!*Email::1*!*Subject::2*!*Attachment::4*!*Date::5*!*Time::6",2)
+	Gui.F_Email.gsfgPrevEmail.Visible(True)
+F.Intrinsic.Control.Else
+	Gui.F_Email.gsfgPrevEmail.Visible(False)
+	F.Intrinsic.Control.CallSub(Buildstyle)
+	Gui.F_Email.gsfgPrevEmail.Visible(True)
+F.Intrinsic.Control.EndIf
+
+F.ODBC.con!rst.Close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("LoadHistory_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3750_CRM_Email_Type.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_email_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.LoadHistory.End
+
+program.sub.gsfgprevemail_commandclick.start
+F.Intrinsic.Control.SetErrorHandler("gsfgprevemail_commandclick_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iRow.Declare(Long)
+V.Local.sEmail.Declare(String)
+V.Local.sSubject.Declare(String)
+V.Local.sTime.Declare(String)
+V.Local.sDate.Declare(String)
+V.Local.sAttach.Declare(String)
+
+'Search for the Body text and display in message box.
+F.Intrinsic.Control.If(V.Args.Key,>,0,"AND",V.Args.Column,=,3)
+	V.Local.iRow.Set(V.Args.Key)
+	Gui.F_Email.gsfgPrevEmail.GetTextMatrix(1,V.Local.iRow,V.Local.sEmail)
+	Gui.F_Email.gsfgPrevEmail.GetTextMatrix(2,V.Local.iRow,V.Local.sSubject)
+	Gui.F_Email.gsfgPrevEmail.GetTextMatrix(5,V.Local.iRow,V.Local.sDate)
+	Gui.F_Email.gsfgPrevEmail.GetTextMatrix(6,V.Local.iRow,V.Local.sTime)
+	Gui.F_Email.gsfgPrevEmail.GetTextMatrix(4,V.Local.iRow,V.Local.sAttach)
+	F.Intrinsic.Variable.UDTCopy(V.uGlobal.uHist,V.uGlobal.uTemp,0)
+	F.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uTemp)
+	F.Intrinsic.Variable.UDTMultiUnFlag(V.uGlobal.uTemp!Email,V.Local.sEmail,V.uGlobal.uTemp!Subject,V.Local.sSubject,V.uGlobal.uTemp!Date,V.Local.sDate,V.uGlobal.uTemp!Time,V.Local.sTime,V.uGlobal.uTemp!Attachment,V.Local.sAttach)
+	F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uTemp)
+	F.Intrinsic.UI.Msgbox(V.uGlobal.uTemp(0)!Body)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("gsfgprevemail_commandclick_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3750_CRM_Email_Type.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_email_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.gsfgprevemail_commandclick.end
+
+program.sub.txtcemail_lostfocus.start
+F.Intrinsic.Control.SetErrorHandler("txtcemail_lostfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.F_Email!txtCEmail.Text,<>,"")
+	F.Intrinsic.Control.CallSub(Loadhistory,"Email",V.Screen.F_Email!txtCEmail.Text)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtcemail_lostfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3750_CRM_Email_Type.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.txtcemail_lostfocus.end
+
+program.sub.txtmodtype_lostfocus.start
+F.Intrinsic.Control.SetErrorHandler("txtmodtype_lostfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.bExist.Declare(Boolean,True)
+V.Local.iRet.Declare(Long)
+V.Local.sType.Declare(String)
+
+V.Local.sType.Set(V.Screen.F_Email!txtModType.Text)
+
+F.Intrinsic.Control.If(V.local.sType.Trim,<>,"")
+	Gui.F_Email.ddlModType.ContainsItem(V.Local.sType.Trim,V.Local.bExist,V.Local.iRet)
+	
+	F.Intrinsic.Control.If(V.Local.iRet,<>,-1)
+		Gui.F_Email.ddlModType.FindItem(V.Screen.F_Email!txtModType.Text,V.Local.bExist)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtmodtype_lostfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3750_CRM_Email_Type.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.txtmodtype_lostfocus.end
+
+
